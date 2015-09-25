@@ -1,0 +1,23 @@
+<div class="form-horizontal">
+<%= form_for(@user) do |f| %>
+<div class="form-group">
+  名前:
+  <%= f.text_field :name %>
+</div>
+<div class="form-group">
+  メール:
+  <%= f.text_field :email %>
+</div>
+<div class="form-group">
+  プロフィール:
+  <%= f.text_field :profile %>
+</div>
+<div class="form-group">
+  地域：
+  <%= f.text_field :area %>
+</div>
+<div class="form-group">
+  <%= f.submit class:"btn btn-sm btn-primary"%>
+<% end %>
+</div>
+</div>

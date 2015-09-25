@@ -2,3 +2,35 @@
     <%= gravatar_for @user %>
     <%= @user.name %>
 </h1>
+<h2>プロフィール</h2>
+<table class="table">
+    <tbody>
+        <tr>
+            <td style="font-weight:bold;text-align:right;">メール：</td>
+            <td><%= @user.email %></td>
+        </tr>
+        <tr>
+            <td style="font-weight:bold;text-align:right;">プロフィール：</td>
+            <td>
+                <% if @user.profile.empty? %>
+                <span style="color:#eee;">プロフィールを入力してください。</span>
+                <% else %>
+                <%= @user.profile %>
+                <% end %>
+            </td>
+        </tr>
+        <tr>
+            <td style="font-weight:bold;text-align:right;">地域：</td>
+            <td>
+                <% if @user.area.empty? %>
+                <span style="color:#eee;">地域</span>
+                <% else %>
+                <%= @user.area %>
+                <% end %>    
+            </td>
+        </tr>
+    </tbody>
+</table>
+<hr>
+<p>プロフィールを編集する</p>
+<%= link_to "edit", edit_user_path(@user), class:"btn btn-sm btn-success" %>
