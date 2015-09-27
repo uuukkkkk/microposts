@@ -12,7 +12,7 @@
         <tr>
             <td style="font-weight:bold;text-align:right;">プロフィール：</td>
             <td>
-                <% if @user.profile.empty? %>
+                <% if @user.profile.blank? %>
                 <span style="color:#eee;">プロフィールを入力してください。</span>
                 <% else %>
                 <%= @user.profile %>
@@ -22,8 +22,8 @@
         <tr>
             <td style="font-weight:bold;text-align:right;">地域：</td>
             <td>
-                <% if @user.area.empty? %>
-                <span style="color:#eee;">地域</span>
+                <% if @user.area.blank? %>
+                <span style="color:#eee;">地域などの情報を入力してください。</span>
                 <% else %>
                 <%= @user.area %>
                 <% end %>    
