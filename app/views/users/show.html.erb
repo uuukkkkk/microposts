@@ -1,36 +1,18 @@
-<h1>
-    <%= gravatar_for @user %>
-    <%= @user.name %>
-</h1>
-<h2>プロフィール</h2>
-<table class="table">
-    <tbody>
-        <tr>
-            <td style="font-weight:bold;text-align:right;">メール：</td>
-            <td><%= @user.email %></td>
-        </tr>
-        <tr>
-            <td style="font-weight:bold;text-align:right;">プロフィール：</td>
-            <td>
-                <% if @user.profile.blank? %>
-                <span style="color:#eee;">プロフィールを入力してください。</span>
-                <% else %>
-                <%= @user.profile %>
-                <% end %>
-            </td>
-        </tr>
-        <tr>
-            <td style="font-weight:bold;text-align:right;">地域：</td>
-            <td>
-                <% if @user.area.blank? %>
-                <span style="color:#eee;">地域などの情報を入力してください。</span>
-                <% else %>
-                <%= @user.area %>
-                <% end %>    
-            </td>
-        </tr>
-    </tbody>
-</table>
-<hr>
-<p>プロフィールを編集する</p>
-<%= link_to "edit", edit_user_path(@user), class:"btn btn-sm btn-success" %>
+<div class="row">
+  <aside class="col-md-4">
+    <section class="user_info">
+      <h1>
+        <%= gravatar_for @user %>
+        <%= @user.name %>
+      </h1>
+    </section>
+  </aside>
+  <div class="col-md-8">
+    <% if @user.microposts.any? %>
+      <h3>Microposts (<%= @user.microposts.count %>)</h3>
+      <ol class="microposts">
+        <%= render @microposts %>
+      </ol>
+    <% end %>
+  </div>
+</div>
