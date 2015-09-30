@@ -1,4 +1,4 @@
-<li id="user-<%= user.id %>">
+<li id="user-<%= user.id %>" class="col-md-4" style="padding:10px;float:left;">
   <%= link_to gravatar_for(user, size: 50), user %>
   <span class="user-id"><%= link_to user.name, user %></span>
 </li>
