@@ -14,7 +14,7 @@
   <div class="col-md-8">
     <h3>followings (<%= @user.following_users.count %>)</h3>
      <% if @user.following_users.present?  %>
-       <ul class="follow">
+       <ul class="follow" style="list-style:none;">
         <%= render @followings %>
         </ul>
       <% else %>
