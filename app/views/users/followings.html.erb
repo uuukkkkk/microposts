@@ -18,6 +18,7 @@
         <%= render @followings %>
         </ul>
       <% else %>
+      <%= paginate @followings %>
        フォローしていません。
     <% end %>
   </div>

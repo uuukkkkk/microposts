@@ -17,8 +17,10 @@
        <ul class="follower" style="list-style:none;">
         <%= render @followers %>
         </ul>
+        <%= paginate @followers %>
       <% else %>
        フォローされていません。
     <% end %>
+    
   </div>
 </div>
